@@ -21,12 +21,18 @@ module.exports = appInfo => {
 
     config.multipart = {
         mode: 'file',
-        // will append to whilelist
         fileExtensions: [
             '.foo',
             '.apk',
             '.doc'
         ],
+    };
+
+    config.mongoose = {
+        client: {
+            url: process.env.EGG_MONGODB_URL || 'mongodb://127.0.0.1/vote_9bass',
+            options: {},
+        },
     };
 
   // add your config here
